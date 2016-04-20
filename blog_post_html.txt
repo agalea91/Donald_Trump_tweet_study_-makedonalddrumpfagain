@@ -1,0 +1,82 @@
+It's April, 2016 and Donald Trump has emerged as the leading Republican candidate (in terms of first ballot committed delegates) for the 2016 United States national election.
+
+<img class="  wp-image-1440 aligncenter" src="https://galeascience.files.wordpress.com/2016/04/presidential_primaries_2016_march.png" alt="presidential_primaries_2016_march" width="433" height="194" />
+
+There is plenty of anti-Tump coverage in the media (from my perspective, at least). In this post we examine a social media outburst, set off by <a href="https://youtu.be/DnpO_RTSNmQ" target="_blank">HBO's "Last Week Tonight" video segment about Trump</a>.
+<h3>Explaining the video</h3>
+The host of Last Week Tonight, John Oliver, will regularly ask the audience to broadcast specific hashtags (via their social networking site of choice). In the video segment about Trump he plays on the fact that Trump's family name was changed from Drumpf a few generations ago. As such, the suggested hashtag was: #MakeDonaldDrumpfAgain - see the <a href="https://youtu.be/DnpO_RTSNmQ?t=1203" target="_blank">relevant clip here</a>.
+
+The HBO video was uploaded to Youtube on February 29th, 2016 at 2:30 AM EST, and has since garnered a lot of interest and been discussed nearly non-stop in the news.
+
+<img class="  wp-image-1439 aligncenter" src="https://galeascience.files.wordpress.com/2016/04/in_the_news.png" alt="in_the_news" width="457" height="203" />
+
+In the 32 days following its release (the length of this study) it collected 23.4 million views and I found ~550,000 tweets with the viral hashtag. About half of them were retweets (RT), meaning that the post was not original content [1].
+
+&nbsp;
+<h2>#MakeDonaldDrumpfAgain study</h2>
+&nbsp;
+<h3>Objectives</h3>
+I will focus on answering the questions:
+<ul>
+	<li>How did the social media ecosystem of Twitter react to this viral political topic?</li>
+	<li>Which US states produce the most anti-Trump tweets?</li>
+</ul>
+For all of the figures below I used Python 3 and the complete code can be found in my <a href="https://github.com/agalea91/Donald_Trump_tweet_study_-makedonalddrumpfagain/blob/master/drumpf_notebook.ipynb" target="_blank">ipython notebook</a>.
+
+For searching and saving tweets, <a href="https://github.com/agalea91/twitter_search" target="_blank">I used this Python 3 script</a>. A <a href="https://galeascience.wordpress.com/2016/03/18/collecting-twitter-data-with-python/" target="_blank">tutorial on using the script and installing dependencies can be found here</a>.
+
+&nbsp;
+<h3>Tweet frequency</h3>
+There was an immediate and large reaction to the video as the hashtag exploded, reaching a total rate of over 18,000 tweets per hour at its peak on Monday. The first few days are seen in detail in the inset of the plot below.
+
+<img class=" size-full wp-image-1469 aligncenter" src="https://galeascience.files.wordpress.com/2016/04/drumpf_tweet_frequency.png" alt="drumpf_tweet_frequency" width="1631" height="1225" />
+
+It's interesting how the tweet and retweet frequencies are so closely correlated, I might look into this more in a future study [1]. Although the Youtube video, which presumably reached the majority of viewers, wasn't uploaded until 2:30 AM EST the tweets began to stream in the night before at around 11:30 PM when the segment was run on TV.
+
+This histogram is also interesting when plotted with a logarithmic scale for the bar height, as it allows for a more detailed visualization of both the small and large scale behaviours. This is done below where the full data range has been included:
+
+<img class="alignnone size-full wp-image-1470" src="https://galeascience.files.wordpress.com/2016/04/drumpf_tweet_frequency_log.png" alt="drumpf_tweet_frequency_log" width="1573" height="1193" />
+
+<span style="line-height:1.7;">The periodic fluctuations repeat daily and minima occur in the middle of the night / very early morning, usually in the range of 2-6 AM EST.</span>
+
+&nbsp;
+<h3><span style="line-height:1.7;">Tweets per state</span></h3>
+It is rarely possible to determine exactly where a tweet was sent from. Only about 400 of the ~550,000 tweets I analyzed had exact coordinate location data. Most of these were <a href="https://galeascience.wordpress.com/2016/03/18/collecting-twitter-data-with-python/" target="_blank">plotted on a world map in my previous post</a> and below I've zoomed in on the US.
+
+<img class=" size-full wp-image-1471 aligncenter" src="https://galeascience.files.wordpress.com/2016/04/drumpf_tweet_locations.png" alt="drumpf_tweet_locations" width="1457" height="793" />
+
+&nbsp;
+
+To address my second question (see objectives above) I attempted to identify the state in which the tweet author lives. This was done by searching for state and city names in user location information (which appears to be input manually by the user) [2]. Out of the ~280,000 total users found, for the fraction of them who live in the US, I was able to determine the state in which they live for ~100,000 of them. If a user produced more than one tweet, I made sure to remove all but one from the data pool for the analysis below [3].
+
+Here is the distribution of tweets across the states, sorted by longitude from the east coast at the top to the west coast at the bottom:
+
+<img class=" size-full wp-image-1473 aligncenter" src="https://galeascience.files.wordpress.com/2016/04/tweets_by_state.png" alt="tweets_by_state" width="1489" height="1642" />
+
+The number is roughly proportional to the population of each state. Below we plot a similar figure where the number of tweets have been divided by the population size.
+
+&nbsp;
+
+The bar size represents the number of (anti-Trump) tweets per capita. The lowest numbers came from Mississippi and Arkansas, the largest came from New Hampshire and Massachusetts.
+
+<img class=" size-full wp-image-1534 aligncenter" src="https://galeascience.files.wordpress.com/2016/04/weighted_tweets_by_state1.png" alt="weighted_tweets_by_state" width="1404" height="1683" />
+
+I translated this information onto a US map where the states are color coded by the number of tweets per capita.
+
+<img class=" size-full wp-image-1474 aligncenter" src="https://galeascience.files.wordpress.com/2016/04/tweets_per_capita_by_state_map.png" alt="tweets_per_capita_by_state_map" width="1457" height="793" />
+
+On the eastern side of the country, more tweets per capita were seen in northern states (with the exception of Louisiana - down there beside Texas). On the west side the picture is different, we see a large number generated by states in the middle of the country and those that border the Pacific Ocean.
+
+&nbsp;
+
+Thanks for reading! All the figures can be found in high resolution in <a href="https://github.com/agalea91/Donald_Trump_tweet_study_-makedonalddrumpfagain" target="_blank">their github repository</a> along with all the code used to create them. If you would like to access my data, I may be able to share the .JSON tweet files with you - although they are quite large.
+
+If you would like to discuss any of the plots or have any questions or corrections, please write a comment. You are also welcome to email me at agalea91@gmail.com or tweet me @agalea91
+
+&nbsp;
+
+[1] - I'm hoping to look closer at the relation between original tweets and their 'children' retweets in a future post.
+
+[2] - I created <a href="https://galeascience.wordpress.com/2016/03/23/us-city-to-state-python-dictionary/">a USA city to state Python dictionary</a> in order to identify many of the tweet user locations.
+
+[3] - Using the Pandas library for Python, the function drop_duplicates() makes this task very simple.
