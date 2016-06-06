@@ -1,0 +1,97 @@
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">It's June, 2016 and Donald Trump is set to face off against Hillary Clinton in the upcoming presidential election. A few months ago, when he was still competing for the Republican presidential nominee position, I collected a large amount of anti-Trump twitter data.
+</span>
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">In <a href="https://galeascience.wordpress.com/2016/04/06/where-are-the-haters-at-a-twitter-study-on-donald-trump/">Part 1 of the study</a> I used this data to identify the location of Trump haters who tweeted the hashtag #MakeDonaldDrumpfAgain in the month of March. In that blog post we looked at the number of tweets per state (and per capita) to see where the haters were. Today we'll follow up with further analysis of the same data, including a closer look at retweet trends and tweet content.
+</span>
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">This study was inspired by a social media outburst set off by <a href="https://youtu.be/DnpO_RTSNmQ">HBO's "Last Week Tonight" video segment about Trump</span></a>, where host John Oliver asks the audience to broadcast the hashtag MakeDonaldDrumpfAgain - see the <a href="https://youtu.be/DnpO_RTSNmQ?t=1203">relevant clip here</span></a>. In the video segment he plays on the fact that Trump's family name was changed from Drumpf a few generations ago.
+</span>
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">In the 32 days following its release (the length of this study) the video collected 23.4 million views on Youbtube and I found ~550,000 tweets with the viral hashtag. About half of them were retweets, meaning that the post was not original content.
+</span>
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 18pt;"><strong>#MakeDonaldDrumpfAgain study
+</strong></span>
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">The <a href="https://github.com/agalea91/twitter_search">Python 3 script I used can be found here</span></a> and a <a href="https://galeascience.wordpress.com/2016/03/18/collecting-twitter-data-with-python/">tutorial on using the script and installing dependencies can be found here</span></a>.
+</span>
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 13pt;"><strong>Objectives
+</strong></span>
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">In this part I'll focus on answering the questions:
+</span>
+<ul>
+	<li><span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">How did the social media ecosystem of Twitter react to this viral political topic?
+</span></li>
+	<li><span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">What is the content of anti-Trump tweets?
+</span></li>
+</ul>
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">For all of the figures below I used Python 3 and the complete code can be found in my <a href="https://github.com/agalea91/Donald_Trump_tweet_study_-makedonalddrumpfagain/blob/master/drumpf_notebook.ipynb">ipython notebook</span></a>.
+</span>
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 13pt;"><strong>Lonely Tweets
+</strong></span>
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">It's common for twitter posts to be "retweeted" by users who want to broadcast the tweet to their followers. Popular twitter accounts can see up to thousands of retweets for each post. Mine, on the other hand, usually get none - we'll call these lonely tweets. Below we look at the March 2016 #MakeDonaldDrumpfAgain tweets that fit under this category.
+</span>
+
+<img class=" size-full wp-image-2323 aligncenter" src="https://galeascience.files.wordpress.com/2016/06/lonely_tweets.png" alt="lonely_tweets" width="1611" height="1156" />
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">The main plot histogram is similar to the one we saw in Part 1 <a href="https://galeascience.files.wordpress.com/2016/04/drumpf_tweet_frequency.png?w=936">for all tweets</a>. What's more insightful is the inset plot showing the ratio of lonely tweets to all tweets. We see that the likelihood of getting a post retweeted decreased as more time passed since the video was initially posted.
+</span>
+
+<span style="color: #3d596d; font-family: Georgia;"><span style="font-size: 13pt;"><strong>Retweet frequency</strong></span><span style="font-size: 11pt;">
+</span></span>
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">I wanted to look closer at the relation between original tweets and their 'children' retweets. In particular: how much time passed between posting the original and somebody retweeting it. Intuition and experience tells me that it happens sooner rather than later. The results, shown below, are consistent with this expectation.
+</span>
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;"><img class=" size-full wp-image-2324 aligncenter" src="https://galeascience.files.wordpress.com/2016/06/retweet_delay_frequency.png" alt="retweet_delay_frequency" width="1540" height="1105" />
+</span>
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">The inset shows the same data as the main plot but on a logarithmic scale, where we see the probability of getting a post retweeted drops off exponentially with time.
+</span>
+
+<span style="color: #3d596d; font-family: Georgia;"><span style="font-size: 13pt;"><strong>Most common hashtags</strong></span><span style="font-size: 11pt;">
+</span></span>
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">Other than #MakeDonaldDrumpfAgain, which was contained in all tweets, the 10 most popular hashtags are seen below.
+</span>
+
+<img class=" size-full wp-image-2325 aligncenter" src="https://galeascience.files.wordpress.com/2016/06/top_hashtags.png" alt="top_hashtags" width="1702" height="1227" />
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">Many of these could lead to misinterpretation as positive tweet sentiment in other studies e.g., #Trump2016, #MakeAmericaGreatAgain. Others, not so much e.g., #NeverTrump, #DumpTrump. Underdog democrat senator Bernie Sanders is referenced with #FeelTheBern, suggesting that Trump haters on twitter are more supportive of Bernie than Hillary. At this point its almost a certainty that she will win out over Bernie as the democratic presidential nominee.
+</span>
+
+<span style="color: #3d596d; font-family: Georgia;"><span style="font-size: 13pt;"><strong>Most common users tweeted @</strong></span><span style="font-size: 11pt;">
+</span></span>
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">Here are the top 10 users included in tweets:
+</span>
+
+<img class=" size-full wp-image-2326 aligncenter" src="https://galeascience.files.wordpress.com/2016/06/top_users_mentioned.png" alt="top_users_mentioned" width="1702" height="1146" />
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">A large group of people directed their dislike towards Trump directly via his twitter account by including @realDonaldTrump in their post. Imagine getting 20,000 "dislike" notifications in just one month! On the other hand, Donald obviously doesn't have time to monitor his twitter account personally ... but I bet he noticed more than just a few of these posts.
+</span>
+
+<span style="color: #3d596d; font-family: Georgia;"><span style="font-size: 13pt;"><strong>Word counts</strong></span><span style="font-size: 11pt;">
+</span></span>
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">How many God-loving Americans put the hate on Trump? Where is the love? How much profanity? All are answered below.
+</span>
+
+<img class=" size-full wp-image-2327 aligncenter" src="https://galeascience.files.wordpress.com/2016/06/tweet_word_count.png" alt="tweet_word_count" width="1457" height="1143" />
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">Okay so this doesn't really tell us much. Most of the love word counts came from posts something akin to "I love John Oliver's video..".
+</span>
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">The most interesting pie slice, in my opinion, is that for profanity. I would be hard-pressed to drop an F-bomb or other swear word in a twitter post, but apparently there are plenty of people who don't mind this sort of thing. I was even tentative to include explicit profanity on my blog, but I will in the name of science! Here are the most popular curse words, presumably directed towards Trump:
+</span>
+
+<img class=" size-full wp-image-2328 aligncenter" src="https://galeascience.files.wordpress.com/2016/06/tweet_word_count_profane.png" alt="tweet_word_count_profane" width="1457" height="1185" />
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">Thanks for reading! All the figures can be found in high resolution in <a href="https://github.com/agalea91/Donald_Trump_tweet_study_-makedonalddrumpfagain">their github repository</span></a> along with all the code used to create them. If you would like to access my data, I may be able to share the .JSON tweet files with you - although they are quite large.
+</span>
+
+<span style="color: #3d596d; font-family: Georgia; font-size: 11pt;">If you would like to discuss any of the plots or have any questions or corrections, please write a comment. You are also welcome to email me at agalea91@gmail.com or tweet me @agalea91</span>
