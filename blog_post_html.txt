@@ -25,6 +25,8 @@ For all of the figures below I used Python 3 and the complete code can be found 
 
 For searching and saving tweets, <a href="https://github.com/agalea91/twitter_search" target="_blank">I used this Python 3 script</a>. A <a href="https://galeascience.wordpress.com/2016/03/18/collecting-twitter-data-with-python/" target="_blank">tutorial on using the script and installing dependencies can be found here</a>.
 
+In <a href="https://galeascience.wordpress.com/2016/06/06/where-the-haters-at-part-2-of-a-twitter-study-on-donald-trump/">Part 2 of this study</a> we take a closer look at retweets and tweet content.
+
 &nbsp;
 <h3>Tweet frequency</h3>
 There was an immediate and large reaction to the video as the hashtag exploded, reaching a total rate of over 18,000 tweets per hour at its peak on Monday. The first few days are seen in detail in the inset of the plot below.
@@ -37,10 +39,10 @@ This histogram is also interesting when plotted with a logarithmic scale for the
 
 <img class="alignnone size-full wp-image-1470" src="https://galeascience.files.wordpress.com/2016/04/drumpf_tweet_frequency_log.png" alt="drumpf_tweet_frequency_log" width="1573" height="1193" />
 
-<span style="line-height:1.7;">The periodic fluctuations repeat daily and minima occur in the middle of the night / very early morning, usually in the range of 2-6 AM EST.</span>
+<span style="line-height: 1.7;">The periodic fluctuations repeat daily and minima occur in the middle of the night / very early morning, usually in the range of 2-6 AM EST.</span>
 
 &nbsp;
-<h3><span style="line-height:1.7;">Tweets per state</span></h3>
+<h3><span style="line-height: 1.7;">Tweets per state</span></h3>
 It is rarely possible to determine exactly where a tweet was sent from. Only about 400 of the ~550,000 tweets I analyzed had exact coordinate location data. Most of these were <a href="https://galeascience.wordpress.com/2016/03/18/collecting-twitter-data-with-python/" target="_blank">plotted on a world map in my previous post</a> and below I've zoomed in on the US.
 
 <img class=" size-full wp-image-1471 aligncenter" src="https://galeascience.files.wordpress.com/2016/04/drumpf_tweet_locations.png" alt="drumpf_tweet_locations" width="1457" height="793" />
@@ -75,7 +77,7 @@ If you would like to discuss any of the plots or have any questions or correctio
 
 &nbsp;
 
-[1] - I'm hoping to look closer at the relation between original tweets and their 'children' retweets in a future post.
+[1] - I took a closer at the relation between original tweets and their 'children' retweets in <a href="https://galeascience.wordpress.com/2016/06/06/where-the-haters-at-part-2-of-a-twitter-study-on-donald-trump/">Part 2 of this study</a>.
 
 [2] - I created <a href="https://galeascience.wordpress.com/2016/03/23/us-city-to-state-python-dictionary/">a USA city to state Python dictionary</a> in order to identify many of the tweet user locations.
 
